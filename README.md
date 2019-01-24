@@ -3,7 +3,10 @@
 pattern which gives the flexibility for unit testing.
 
 • When the app is opened it checks with the internet to download the userdata. The data is saved in the database so the user
-can edit the user data in the future.
+can edit the user data in the future. when retrieving the data it is sorted based on number of days required to achieve the $10000.
+
+• The app could be built actually even without creating the database as the data is small, so the data structure like Priority queue or even ArrayList with custom comparator for sorting could be used. But if there is more data then it would impact the performance. That is why I chose to create the database using Room library and saved the data over there.
+
 • For the subsequent network call, when the data is loaded it checks if the user data is already downloaded by comparing the "id" saved with the sharedPreference. if the data already exist for that user, it does not re-download the data. 
 
 • For the network operation Volley library is used.
